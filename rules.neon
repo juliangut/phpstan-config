@@ -114,7 +114,5 @@ services:
     tags: [phpstan.rules.rule]
   - class: TheCodingMachine\PHPStan\Rules\Exceptions\MustRethrowRule
     tags: [phpstan.rules.rule]
-  - class: SlamPhpStan\StringToClassRule
-    tags: [phpstan.rules.rule]
   - class: Mhujer\PHPStanRules\Rules\ConstructorIsFirstMethodInClassRule
     tags: [phpstan.rules.rule]
