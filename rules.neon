@@ -1,0 +1,120 @@
+includes:
+  - %rootDir%/conf/bleedingEdge.neon
+  - %rootDir%/../phpstan-deprecation-rules/rules.neon
+  - %rootDir%/../phpstan-strict-rules/rules.neon
+  - %rootDir%/../../spaze/phpstan-disallowed-calls/extension.neon
+  - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+  - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+  - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
+  - %rootDir%/../../kcs/psr-phpstan-rules/phpstan.neon
+  - %rootDir%/../../slam/phpstan-extensions/conf/not-now-rules.neon
+  - %rootDir%/../../nusje2000/phpstan-monolith/phpstan.neon
+  - %rootDir%/../../grifart/phpstan-oneline/config.neon
+
+parametersSchema:
+  ergebnis: structure([
+    interfacesImplementedByContainers: listOf(string())
+  ])
+
+parameters:
+  stubFiles:
+    - src/Stub/functions.stub
+  compact:
+    format: "{absolutePath}:{line}\n ↳ {error}"
+  disallowedFunctionCalls:
+    - function: 'in_array()'
+      message: 'set the third parameter $strict to `true` to also check the types to prevent type juggling bugs'
+      allowParamsAnywhere:
+        - position: 3
+          name: 'strict'
+          value: true
+    - function: 'htmlspecialchars()'
+      message: 'set the $flags parameter to `ENT_QUOTES` to also convert single quotes to entities to prevent some HTML injection bugs'
+      allowParamFlagsAnywhere:
+        - position: 2
+          name: 'flags'
+          value: ::ENT_QUOTES
+    - function: 'json_decode()'
+      message: 'set the $flags parameter to `JSON_THROW_ON_ERROR` to throw a JsonException'
+      allowParamFlagsAnywhere:
+        - position: 4
+          name: 'flags'
+          value: ::JSON_THROW_ON_ERROR
+    - function:
+        - 'print_r()'
+        - 'var_export()'
+      message: 'use some logger instead'
+      allowParamsAnywhere:
+        - position: 2
+          name: 'return'
+          value: true
+    - function:
+        - 'dd()'
+        - 'debug_backtrace()'
+        - 'dump()'
+        - 'echo()'
+        - 'print()'
+      message: 'use some logger instead'
+    - function: 'compact()'
+      message: 'construct the array manually instead'
+    - function: 'create_function()'
+      message: 'create an anonymous function instead'
+    - function: 'phpinfo()'
+      message: 'will reveal php config'
+    - function: 'empty()'
+      message: 'use a strict comparison instead'
+    - function: 'putenv()'
+      message: 'rely on an environment abstraction like vlucas/phpdotenv'
+    - function:
+        - 'die()'
+        - 'exit()'
+      message: 'exit expressions are not allowed'
+  disallowedConstants:
+    - constant: ['DATE_ISO8601', 'DATE_RFC3339', 'DATE_W3C']
+      message: 'use DATE_ATOM instead'
+    - class: 'DateTimeInterface'
+      constant: ['ISO8601', 'RFC3339', 'W3C']
+      message: 'use DateTimeInterface::ATOM instead'
+  disallowedSuperglobals:
+    - superglobal:
+        - '$_COOKIE'
+        - '$_FILES'
+        - '$_GET'
+        - '$_POST'
+        - '$_REQUEST'
+        - '$_SERVER'
+        - '$_SESSION'
+      message: 'rely on a request abstraction like laminas/laminas-diactoros'
+    - superglobal: '$_ENV'
+      message: 'rely on an environment abstraction like vlucas/phpdotenv'
+    - superglobal: '$_SESSION'
+      message: 'rely on a session abstraction like laminas/laminas-session'
+    - superglobal: '$GLOBALS'
+      message: 'do not use global variables'
+  ergebnis:
+    interfacesImplementedByContainers:
+      - Psr\Container\ContainerInterface
+
+rules:
+  - Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
+  - Ergebnis\PHPStan\Rules\Expressions\NoIssetRule
+  - Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
+  - Jgut\PhpStanConfig\Rules\Statement\NoGotoRule
+
+services:
+  - class: Ergebnis\PHPStan\Rules\Methods\NoParameterWithContainerTypeDeclarationRule
+    arguments:
+      interfacesImplementedByContainers: %ergebnis.interfacesImplementedByContainers%
+    tags: [phpstan.rules.rule]
+  - class: TheCodingMachine\PHPStan\Rules\Exceptions\ThrowMustBundlePreviousExceptionRule
+    tags: [phpstan.rules.rule]
+  - class: TheCodingMachine\PHPStan\Rules\Exceptions\DoNotThrowExceptionBaseClassRule
+    tags: [phpstan.rules.rule]
+  - class: TheCodingMachine\PHPStan\Rules\Exceptions\EmptyExceptionRule
+    tags: [phpstan.rules.rule]
+  - class: TheCodingMachine\PHPStan\Rules\Exceptions\MustRethrowRule
+    tags: [phpstan.rules.rule]
+  - class: SlamPhpStan\StringToClassRule
+    tags: [phpstan.rules.rule]
+  - class: Mhujer\PHPStanRules\Rules\ConstructorIsFirstMethodInClassRule
+    tags: [phpstan.rules.rule]

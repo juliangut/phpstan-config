@@ -1,0 +1,64 @@
+{
+    "name": "juliangut/phpstan-config",
+    "description": "PHPStan configuration",
+    "homepage": "https://github.com/juliangut/phpstan-config",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Julián Gutiérrez",
+            "email": "juliangut@gmail.com",
+            "homepage": "http://juliangut.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/juliangut/phpstan-config",
+        "issues": "https://github.com/juliangut/phpstan-config/issues"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0",
+        "ergebnis/phpstan-rules": "^1.0",
+        "grifart/phpstan-oneline": "~0.4",
+        "kcs/psr-phpstan-rules": "^1.1",
+        "mhujer/phpstan-rules": "^1.0",
+        "nusje2000/phpstan-monolith": "^0.1.4",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpstan/phpstan-strict-rules": "^1.5",
+        "slam/phpstan-extensions": "^6.0",
+        "spaze/phpstan-disallowed-calls": "^2.15",
+        "thecodingmachine/phpstan-strict-rules": "^1.0"
+    },
+    "require-dev": {
+        "infection/infection": "~0.26.7",
+        "juliangut/easy-coding-standard-config": "dev-master",
+        "overtrue/phplint": "^4.0|^5.0|^6.0",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpmd/phpmd": "^2.10",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "phpunit/phpunit": "^9.5|^10.0",
+        "povils/phpmnd": "^3.0",
+        "roave/security-advisories": "dev-master",
+        "sebastian/phpcpd": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jgut\\PhpStanConfig\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jgut\\PhpStanConfig\\Tests\\": "tests/PhpStanConfig"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": false
+        }
+    }
+}

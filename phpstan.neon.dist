@@ -1,0 +1,15 @@
+includes:
+  - %rootDir%/../phpstan-phpunit/extension.neon
+  - %rootDir%/../phpstan-phpunit/rules.neon
+  - phpstan.neon
+
+parameters:
+  paths:
+    - ecs.php
+    - src
+    - tests
+  excludePaths:
+    - tests/PhpStanConfig/Rules/*/Fixture/*
+  ignoreErrors:
+    - message: '#^Parameter \#1 \$additionalSkips of method Jgut\\ECS\\Config\\AbstractConfigSet::setAdditionalSkips\(\) expects .+, .+ given\.$#'
+      path: ecs.php
