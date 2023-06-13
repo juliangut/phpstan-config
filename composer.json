@@ -23,7 +23,6 @@
         "grifart/phpstan-oneline": "~0.4",
         "kcs/psr-phpstan-rules": "^1.1",
         "mhujer/phpstan-rules": "^1.0",
-        "nusje2000/phpstan-monolith": "^0.1.4",
         "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-deprecation-rules": "^1.1",
         "phpstan/phpstan-strict-rules": "^1.5",
