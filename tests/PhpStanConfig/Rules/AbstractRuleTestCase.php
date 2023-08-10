@@ -11,23 +11,24 @@ declare(strict_types=1);
 
 namespace Jgut\PhpStanConfig\Tests\Rules;
 
-use Jgut\PhpStanConfig\Rules\Statement\NoGotoRule;
+use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
 /**
  * @internal
  *
- * @extends RuleTestCase<NoGotoRule>
+ * @template TRule of Rule
+ * @extends RuleTestCase<TRule>
  */
 abstract class AbstractRuleTestCase extends RuleTestCase
 {
     /**
      * @return iterable<string, list<string>>
      */
-    abstract public static function analysisSucceedsProvider(): iterable;
+    abstract public static function provideAnalysisSucceedsData(): iterable;
 
     /**
-     * @dataProvider analysisSucceedsProvider
+     * @dataProvider provideAnalysisSucceedsData
      */
     final public function testAnalysisSucceeds(string $path): void
     {
@@ -39,10 +40,10 @@ abstract class AbstractRuleTestCase extends RuleTestCase
     /**
      * @return iterable<string, array{0: string, 1: array{0: string, 1: int, 2?: string}}>
      */
-    abstract public static function analysisFailsProvider(): iterable;
+    abstract public static function provideAnalysisFailsData(): iterable;
 
     /**
-     * @dataProvider analysisFailsProvider
+     * @dataProvider provideAnalysisFailsData
      *
      * @param array{0: string, 1: int, 2?: string} $expectedError
      */

@@ -18,16 +18,18 @@ use PHPStan\Rules\Rule;
 /**
  * @internal
  *
+ * @extends AbstractRuleTestCase<NoGotoRule>
+ *
  * @covers \Jgut\PhpStanConfig\Rules\Statement\NoGotoRule
  */
 final class NoGotoRuleTest extends AbstractRuleTestCase
 {
-    public static function analysisSucceedsProvider(): iterable
+    public static function provideAnalysisSucceedsData(): iterable
     {
         yield 'goto-not-used' => [__DIR__ . '/Fixture/NoGotoRule/Success/goto-not-used.php'];
     }
 
-    public static function analysisFailsProvider(): iterable
+    public static function provideAnalysisFailsData(): iterable
     {
         $fixturesPath = __DIR__ . '/Fixture/NoGotoRule';
 
