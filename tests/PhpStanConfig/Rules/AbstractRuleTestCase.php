@@ -18,6 +18,7 @@ use PHPStan\Testing\RuleTestCase;
  * @internal
  *
  * @template TRule of Rule
+ *
  * @extends RuleTestCase<TRule>
  */
 abstract class AbstractRuleTestCase extends RuleTestCase
