@@ -25,10 +25,10 @@ abstract class AbstractRuleTestCase extends RuleTestCase
     /**
      * @return iterable<string, list<string>>
      */
-    abstract public static function provideAnalysisSucceedsData(): iterable;
+    abstract public static function provideAnalysisSucceedsCases(): iterable;
 
     /**
-     * @dataProvider provideAnalysisSucceedsData
+     * @dataProvider provideAnalysisSucceedsCases
      */
     final public function testAnalysisSucceeds(string $path): void
     {
@@ -40,10 +40,10 @@ abstract class AbstractRuleTestCase extends RuleTestCase
     /**
      * @return iterable<string, array{0: string, 1: array{0: string, 1: int, 2?: string}}>
      */
-    abstract public static function provideAnalysisFailsData(): iterable;
+    abstract public static function provideAnalysisFailsCases(): iterable;
 
     /**
-     * @dataProvider provideAnalysisFailsData
+     * @dataProvider provideAnalysisFailsCases
      *
      * @param array{0: string, 1: int, 2?: string} $expectedError
      */

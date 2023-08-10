@@ -24,12 +24,12 @@ use PHPStan\Rules\Rule;
  */
 final class NoGotoRuleTest extends AbstractRuleTestCase
 {
-    public static function provideAnalysisSucceedsData(): iterable
+    public static function provideAnalysisSucceedsCases(): iterable
     {
         yield 'goto-not-used' => [__DIR__ . '/Fixture/NoGotoRule/Success/goto-not-used.php'];
     }
 
-    public static function provideAnalysisFailsData(): iterable
+    public static function provideAnalysisFailsCases(): iterable
     {
         $fixturesPath = __DIR__ . '/Fixture/NoGotoRule';
 
