@@ -9,7 +9,6 @@
 
 declare(strict_types=1);
 
-use Jgut\ECS\Config\ConfigSet80;
 use Jgut\ECS\Config\ConfigSet81;
 use Jgut\ECS\Config\ConfigSet82;
 use JgutCodingStandard\Sniffs\NamingConventions\CamelCapsFunctionNameSniff;
@@ -32,10 +31,8 @@ return static function (ECSConfig $ecsConfig): void {
 
     if (\PHP_VERSION_ID >= 80_200) {
         $configSet = new ConfigSet82();
-    } elseif (\PHP_VERSION_ID >= 80_100) {
-        $configSet = new ConfigSet81();
     } else {
-        $configSet = new ConfigSet80();
+        $configSet = new ConfigSet81();
     }
 
     $fixturesPath = __DIR__ . '/tests/PhpStanConfig/Rules/Statement/Fixture';

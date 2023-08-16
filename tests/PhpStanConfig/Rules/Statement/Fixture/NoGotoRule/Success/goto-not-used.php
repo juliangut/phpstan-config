@@ -20,4 +20,4 @@ function _goto(string $names): void
 _goto('stage');
 
 stage:
-echo 'goto';
+// NOOP

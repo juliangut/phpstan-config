@@ -14,4 +14,4 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Statement\Fixture\NoGotoRule\Failure;
 GoTo stage;
 
 stage:
-echo 'goto';
+// NOOP

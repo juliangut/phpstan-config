@@ -1,4 +1,4 @@
-[![PHP version](https://img.shields.io/badge/PHP-%3E%3D8.0-8892BF.svg?style=flat-square)](http://php.net)
+[![PHP version](https://img.shields.io/badge/PHP-%3E%3D8.1-8892BF.svg?style=flat-square)](http://php.net)
 [![Latest Version](https://img.shields.io/packagist/v/juliangut/phpstan-config.svg?style=flat-square)](https://packagist.org/packages/juliangut/phpstan-config)
 [![License](https://img.shields.io/github/license/juliangut/phpstan-config.svg?style=flat-square)](https://github.com/juliangut/phpstan-config/blob/master/LICENSE)
 
@@ -21,9 +21,22 @@ composer require --dev juliangut/phpstan-config
 
 Include in your phpstan configuration file
 
+### Without PHPUnit
+
 ```neon
 includes:
   - %rootDir%/../../juliangut/phpstan-config/phpstan.neon
+
+# Add your custom configuration if needed
+```
+
+### With PHPUnit
+
+```neon
+includes:
+  - %rootDir%/../../juliangut/phpstan-config/phpstan-phpunit.neon
+
+# Add your custom configuration if needed
 ```
 
 ## Contributing
