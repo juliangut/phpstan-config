@@ -17,11 +17,17 @@ Opinionated as can be configuration defaults for [PHPStan](https://github.com/ph
 composer require --dev juliangut/phpstan-config
 ```
 
+If You need a specific PHPStan constraint
+
+```
+composer require --dev phpstan/phpstan:^1.11
+```
+
 ## Usage
 
 Include in your phpstan configuration file
 
-### Without PHPUnit
+### Without PHPUnit rules
 
 ```neon
 includes:
@@ -30,7 +36,7 @@ includes:
 # Add your custom configuration if needed
 ```
 
-### With PHPUnit
+### With PHPUnit rules
 
 ```neon
 includes:
