@@ -13,6 +13,7 @@ includes:
 parametersSchema:
   ergebnis: structure([
     interfacesImplementedByContainers: listOf(string())
+    methodsAllowedToUseContainerTypeDeclarations: listOf(string())
   ])
 
 parameters:
@@ -93,6 +94,7 @@ parameters:
   ergebnis:
     interfacesImplementedByContainers:
       - Psr\Container\ContainerInterface
+    methodsAllowedToUseContainerTypeDeclarations: []
 
 rules:
   - Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
@@ -104,6 +106,7 @@ services:
   - class: Ergebnis\PHPStan\Rules\Methods\NoParameterWithContainerTypeDeclarationRule
     arguments:
       interfacesImplementedByContainers: %ergebnis.interfacesImplementedByContainers%
+      methodsAllowedToUseContainerTypeDeclarations: %ergebnis.methodsAllowedToUseContainerTypeDeclarations%
     tags: [phpstan.rules.rule]
   - class: TheCodingMachine\PHPStan\Rules\Exceptions\ThrowMustBundlePreviousExceptionRule
     tags: [phpstan.rules.rule]
