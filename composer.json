@@ -19,7 +19,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.0",
-        "ergebnis/phpstan-rules": "^1.0",
+        "ergebnis/phpstan-rules": "^2.0",
         "grifart/phpstan-oneline": "~0.4",
         "kcs/psr-phpstan-rules": "^1.1",
         "mhujer/phpstan-rules": "^1.0",
