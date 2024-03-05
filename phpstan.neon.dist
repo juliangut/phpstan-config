@@ -2,6 +2,8 @@ includes:
   - phpstan-phpunit.neon
 
 parameters:
+  parallel:
+    maximumNumberOfProcesses: 7
   paths:
     - ecs.php
     - src
@@ -9,5 +11,7 @@ parameters:
   excludePaths:
     - tests/PhpStanConfig/Rules/*/Fixture/*/Failure/*
   ignoreErrors:
+    - message: '/^Call to function method_exists\(\) with .Symplify\\\\EasyCodingStandard\\\\Config\\\\ECSConfig. and .configure. will always evaluate to (true|false)\.$/'
+      path: ecs.php
     - message: '#^Parameter \#1 \$additionalSkips of method Jgut\\ECS\\Config\\AbstractConfigSet::setAdditionalSkips\(\) expects .+, .+ given\.$#'
       path: ecs.php
