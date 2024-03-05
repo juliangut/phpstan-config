@@ -33,13 +33,13 @@ parameters:
       allowParamFlagsAnywhere:
         - position: 2
           name: 'flags'
-          value: ::constant(ENT_QUOTES)
+          value: 3 # ::constant(ENT_QUOTES)
     - function: 'json_decode()'
       message: 'set the $flags parameter to `JSON_THROW_ON_ERROR` to throw a JsonException'
       allowParamFlagsAnywhere:
         - position: 4
           name: 'flags'
-          value: ::constant(JSON_THROW_ON_ERROR)
+          value: 4194304 # ::constant(JSON_THROW_ON_ERROR)
     - function:
         - 'print_r()'
         - 'var_export()'
