@@ -1,4 +1,5 @@
 includes:
+  - %rootDir%/../../ticketswap/phpstan-error-formatter/extension.neon
   - %rootDir%/conf/bleedingEdge.neon
   - %rootDir%/../phpstan-deprecation-rules/rules.neon
   - %rootDir%/../phpstan-strict-rules/rules.neon
@@ -8,7 +9,6 @@ includes:
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
   - %rootDir%/../../kcs/psr-phpstan-rules/phpstan.neon
   - %rootDir%/../../slam/phpstan-extensions/conf/not-now-rules.neon
-  - %rootDir%/../../grifart/phpstan-oneline/config.neon
 
 parametersSchema:
   ergebnis: structure([
@@ -19,8 +19,6 @@ parametersSchema:
 parameters:
   stubFiles:
     - src/Stub/functions.stub
-  compact:
-    format: "{absolutePath}:{line}\n ↳ {error}"
   disallowedFunctionCalls:
     - function: 'in_array()'
       message: 'set the third parameter $strict to `true` to also check the types to prevent type juggling bugs'

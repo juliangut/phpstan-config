@@ -4,5 +4,5 @@ includes:
 parameters:
   level: max
   tipsOfTheDay: false
-  errorFormat: compact
+  errorFormat: ticketswap
   checkMissingCallableSignature: true
