@@ -15,6 +15,7 @@ use PhpParser\Node;
 use PhpParser\Node\Stmt\Goto_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleErrorBuilder;
 
 /**
  * @implements Rule<Goto_>
@@ -32,7 +33,9 @@ final class NoGotoRule implements Rule
     public function processNode(Node $node, Scope $scope): array
     {
         return [
-            'Goto statement should not be used.',
+            RuleErrorBuilder::message('Goto statement should not be used.')
+                ->identifier('statement.goto')
+                ->build(),
         ];
     }
 }
