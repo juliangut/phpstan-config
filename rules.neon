@@ -55,8 +55,6 @@ parameters:
       message: 'use some logger instead'
     - function: 'compact()'
       message: 'construct the array manually instead'
-    - function: 'create_function()'
-      message: 'create an anonymous function instead'
     - function: 'phpinfo()'
       message: 'will reveal php config'
     - function: 'empty()'
