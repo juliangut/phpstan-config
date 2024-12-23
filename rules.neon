@@ -46,8 +46,6 @@ parameters:
       enabled: true
     forbidUnsafeArrayKey:
       enabled: true
-    forbidVariableTypeOverwriting:
-      enabled: true
     forbidUnsetClassField:
       enabled: true
     forbidUnusedException:
