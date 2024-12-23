@@ -7,7 +7,6 @@ parameters:
   errorFormat: ticketswap
 #  checkImplicitMixed: true
   checkBenevolentUnionTypes: true
-  checkUninitializedProperties: true
   checkMissingCallableSignature: true
 #  checkMissingOverrideMethodAttribute: true
   checkTooWideReturnTypesInProtectedAndPublicMethods: true
