@@ -3,6 +3,7 @@ includes:
   - %rootDir%/conf/bleedingEdge.neon
   - %rootDir%/../phpstan-deprecation-rules/rules.neon
   - %rootDir%/../phpstan-strict-rules/rules.neon
+  - %rootDir%/../../shipmonk/phpstan-rules/rules.neon
   - %rootDir%/../../spaze/phpstan-disallowed-calls/extension.neon
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
@@ -19,6 +20,40 @@ parametersSchema:
 parameters:
   stubFiles:
     - src/Stub/functions.stub
+  shipmonkRules:
+    enableAllRules: false
+    allowComparingOnlyComparableTypes:
+      enabled: true
+    enforceEnumMatch:
+      enabled: true
+    forbidArithmeticOperationOnNonNumber:
+      enabled: true
+    forbidEnumInFunctionArguments:
+      enabled: true
+    forbidFetchOnMixed:
+      enabled: true
+    forbidMethodCallOnMixed:
+      enabled: true
+    forbidIncrementDecrementOnNonInteger:
+      enabled: true
+    forbidMatchDefaultArmForEnums:
+      enabled: true
+    forbidNullInBinaryOperations:
+      enabled: true
+    forbidNullInInterpolatedString:
+      enabled: true
+    forbidProtectedEnumMethod:
+      enabled: true
+    forbidUnsafeArrayKey:
+      enabled: true
+    forbidVariableTypeOverwriting:
+      enabled: true
+    forbidUnsetClassField:
+      enabled: true
+    forbidUnusedException:
+      enabled: true
+    uselessPrivatePropertyDefaultValue:
+      enabled: true
   disallowedFunctionCalls:
     - function: 'in_array()'
       message: 'set the third parameter $strict to `true` to also check the types to prevent type juggling bugs'
