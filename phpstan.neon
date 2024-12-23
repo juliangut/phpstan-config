@@ -8,7 +8,7 @@ parameters:
 #  checkImplicitMixed: true
   checkBenevolentUnionTypes: true
   checkMissingCallableSignature: true
-#  checkMissingOverrideMethodAttribute: true
+  checkMissingOverrideMethodAttribute: true
   checkTooWideReturnTypesInProtectedAndPublicMethods: true
   reportAnyTypeWideningInVarTag: true
 #  reportPossiblyNonexistentConstantArrayOffset: true
