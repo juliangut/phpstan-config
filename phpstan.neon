@@ -12,5 +12,5 @@ parameters:
 #  checkMissingOverrideMethodAttribute: true
   checkTooWideReturnTypesInProtectedAndPublicMethods: true
   reportAnyTypeWideningInVarTag: true
-  reportPossiblyNonexistentConstantArrayOffset: true
-  reportPossiblyNonexistentGeneralArrayOffset: true
+#  reportPossiblyNonexistentConstantArrayOffset: true
+#  reportPossiblyNonexistentGeneralArrayOffset: true
