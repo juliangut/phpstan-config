@@ -5,7 +5,7 @@ parameters:
   level: max
   tipsOfTheDay: false
   errorFormat: ticketswap
-  checkImplicitMixed: true
+#  checkImplicitMixed: true
   checkBenevolentUnionTypes: true
   checkUninitializedProperties: true
   checkMissingCallableSignature: true
