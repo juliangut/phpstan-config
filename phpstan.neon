@@ -5,6 +5,8 @@ parameters:
   level: max
   tipsOfTheDay: false
   errorFormat: ticketswap
+#  tmpDir: %currentWorkingDirectory%/tmp
+#  editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
 #  checkImplicitMixed: true
   checkBenevolentUnionTypes: true
   checkMissingCallableSignature: true
@@ -12,4 +14,6 @@ parameters:
   checkTooWideReturnTypesInProtectedAndPublicMethods: true
   reportAnyTypeWideningInVarTag: true
   reportPossiblyNonexistentConstantArrayOffset: true
+#  checkUninitializedProperties: true
+#  rememberPossiblyImpureFunctionValues: false
 #  reportPossiblyNonexistentGeneralArrayOffset: true
