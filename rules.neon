@@ -26,25 +26,25 @@ parameters:
     enableAllRules: false
     allowComparingOnlyComparableTypes:
       enabled: true
-    enforceEnumMatch:
-      enabled: true
     forbidArithmeticOperationOnNonNumber:
       enabled: true
     forbidEnumInFunctionArguments:
       enabled: true
     forbidFetchOnMixed:
       enabled: true
-    forbidMethodCallOnMixed:
-      enabled: true
     forbidIncrementDecrementOnNonInteger:
       enabled: true
     forbidMatchDefaultArmForEnums:
+      enabled: true
+    forbidMethodCallOnMixed:
       enabled: true
     forbidNullInBinaryOperations:
       enabled: true
     forbidNullInInterpolatedString:
       enabled: true
     forbidProtectedEnumMethod:
+      enabled: true
+    forbidReturnValueInYieldingMethod:
       enabled: true
     forbidUnsafeArrayKey:
       enabled: true

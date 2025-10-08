@@ -7,13 +7,13 @@ parameters:
   errorFormat: ticketswap
 #  tmpDir: %currentWorkingDirectory%/tmp
 #  editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
-#  checkImplicitMixed: true
   checkBenevolentUnionTypes: true
+#  checkImplicitMixed: true
   checkMissingCallableSignature: true
 #  checkMissingOverrideMethodAttribute: true
   checkTooWideReturnTypesInProtectedAndPublicMethods: true
-  reportAnyTypeWideningInVarTag: true
-  reportPossiblyNonexistentConstantArrayOffset: true
 #  checkUninitializedProperties: true
 #  rememberPossiblyImpureFunctionValues: false
+  reportAnyTypeWideningInVarTag: true
+  reportPossiblyNonexistentConstantArrayOffset: true
 #  reportPossiblyNonexistentGeneralArrayOffset: true
