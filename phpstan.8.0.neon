@@ -1,7 +1,0 @@
-includes:
-  - phpstan.neon.dist
-
-parameters:
-  ignoreErrors:
-    - message: '/^Call to method withPaths\(\) on an unknown class Symplify\\EasyCodingStandard\\Configuration\\ECSConfigBuilder\.$/'
-      path: ecs.php
