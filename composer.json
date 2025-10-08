@@ -20,7 +20,6 @@
     "require": {
         "php": "^8.2",
         "ergebnis/phpstan-rules": "^2.12",
-        "kcs/psr-phpstan-rules": "^1.1",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",

@@ -1,0 +1,3 @@
+services:
+  - class: Jgut\PhpStanConfig\Type\Container\ContainerDynamicReturnTypeExtension
+    tags: [phpstan.broker.dynamicMethodReturnTypeExtension]

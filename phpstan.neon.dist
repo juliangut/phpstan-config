@@ -9,6 +9,7 @@ parameters:
     - src
     - tests
   excludePaths:
+    - src/Stub
     - tests/PhpStanConfig/Rules/*/Fixture/*/Failure/*
   ignoreErrors:
     - message: '/^Call to function method_exists\(\) with .Symplify\\\\EasyCodingStandard\\\\Config\\\\ECSConfig. and .configure. will always evaluate to (true|false)\.$/'

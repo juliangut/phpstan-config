@@ -26,6 +26,8 @@ use RuntimeException;
 use Throwable;
 
 /**
+ * From thecodingmachine/phpstan-strict-rules.
+ *
  * @implements Rule<Catch_>
  */
 class MustRethrowRule implements Rule

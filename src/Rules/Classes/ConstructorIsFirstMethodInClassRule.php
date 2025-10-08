@@ -18,6 +18,8 @@ use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
 /**
+ * From mhujer/phpstan-rules.
+ *
  * @implements Rule<Class_>
  */
 class ConstructorIsFirstMethodInClassRule implements Rule

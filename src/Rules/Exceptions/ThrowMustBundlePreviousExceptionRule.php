@@ -23,6 +23,8 @@ use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
 /**
+ * From thecodingmachine/phpstan-strict-rules.
+ *
  * @implements Rule<Catch_>
  */
 class ThrowMustBundlePreviousExceptionRule implements Rule

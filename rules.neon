@@ -8,7 +8,6 @@ includes:
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
-  - %rootDir%/../../kcs/psr-phpstan-rules/phpstan.neon
 
 parametersSchema:
   ergebnis: structure([
@@ -19,6 +18,10 @@ parametersSchema:
 parameters:
   stubFiles:
     - src/Stub/functions.stub
+    - src/Stub/CacheInterface.stub
+    - src/Stub/CacheItemInterface.stub
+    - src/Stub/CacheItemPoolInterface.stub
+    - src/Stub/EventDispatcherInterface.stub
   shipmonkRules:
     enableAllRules: false
     allowComparingOnlyComparableTypes:
@@ -143,6 +146,8 @@ services:
       interfacesImplementedByContainers: %ergebnis.interfacesImplementedByContainers%
       methodsAllowedToUseContainerTypeDeclarations: %ergebnis.methodsAllowedToUseContainerTypeDeclarations%
     tags: [phpstan.rules.rule]
+  - class: Jgut\PhpStanConfig\Type\Container\ContainerDynamicReturnTypeExtension
+    tags: [phpstan.broker.dynamicMethodReturnTypeExtension]
   - class: Jgut\PhpStanConfig\Rules\Classes\ConstructorIsFirstMethodInClassRule
     tags: [phpstan.rules.rule]
   - class: Jgut\PhpStanConfig\Rules\Statement\NoGotoRule

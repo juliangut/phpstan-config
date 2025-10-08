@@ -19,6 +19,8 @@ use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
 /**
+ * From thecodingmachine/phpstan-strict-rules.
+ *
  * @implements Rule<Throw_>
  */
 class DoNotThrowExceptionBaseClassRule implements Rule

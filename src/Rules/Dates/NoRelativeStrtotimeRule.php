@@ -20,6 +20,8 @@ use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
 /**
+ * From slam/phpstan-extensions.
+ *
  * @implements Rule<FuncCall>
  */
 final class NoRelativeStrtotimeRule implements Rule

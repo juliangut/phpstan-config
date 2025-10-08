@@ -20,6 +20,8 @@ use PHPStan\Rules\RuleErrorBuilder;
 use PHPStan\Type\ObjectType;
 
 /**
+ * From slam/phpstan-extensions.
+ *
  * @implements Rule<New_>
  */
 final class NoRelativeDateTimeInterfaceRule implements Rule
