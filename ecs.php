@@ -9,13 +9,14 @@
 
 declare(strict_types=1);
 
-use Jgut\ECS\Config\ConfigSet80;
+use Jgut\ECS\Config\ConfigSet82;
+use JgutCodingStandard\Sniffs\CodeAnalysis\EmptyStatementSniff;
 use JgutCodingStandard\Sniffs\NamingConventions\CamelCapsFunctionNameSniff;
 use PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-$fixturesPath = __DIR__ . '/tests/PhpStanConfig/Rules/Statement/Fixture';
-$configSet = (new ConfigSet80())
+$fixturesPath = __DIR__ . '/tests/PhpStanConfig/Rules';
+$configSet = (new ConfigSet82())
     ->setHeader(<<<'HEADER'
     (c) 2023-{{year}} Julián Gutiérrez <juliangut@gmail.com>
 
@@ -24,10 +25,14 @@ $configSet = (new ConfigSet80())
     HEADER)
     ->setAdditionalSkips([
         LowercaseKeywordsFixer::class => [
-            $fixturesPath . '/NoGotoRule/Failure/goto-used-with-incorrect-case.php',
+            $fixturesPath . '/Statement/Fixture/NoGotoRule/Failure/goto-used-with-incorrect-case.php',
         ],
         CamelCapsFunctionNameSniff::class => [
-            $fixturesPath . '/NoGotoRule/Success/goto-not-used.php',
+            $fixturesPath . '/Statement/Fixture/NoGotoRule/Success/goto-not-used.php',
+        ],
+        EmptyStatementSniff::class => [
+            $fixturesPath . '/Exceptions/Fixture/EmptyExceptionRule/Failure/not-captured-exception.php',
+            $fixturesPath . '/Exceptions/Fixture/MustRethrowRule/Failure/not-rethrown-exception.php',
         ],
     ]);
 $paths = [

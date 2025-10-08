@@ -9,7 +9,6 @@ includes:
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
   - %rootDir%/../../spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
   - %rootDir%/../../kcs/psr-phpstan-rules/phpstan.neon
-  - %rootDir%/../../slam/phpstan-extensions/conf/not-now-rules.neon
 
 parametersSchema:
   ergebnis: structure([
@@ -98,6 +97,13 @@ parameters:
         - 'die()'
         - 'exit()'
       message: 'exit expressions are not allowed'
+    - function: 'time()'
+      message: 'rely on a clock abstraction like lcobucci/clock'
+    - function: 'date()'
+      message: 'set the $timestamp parameter or rely on a clock abstraction like lcobucci/clock'
+      allowParamsAnywhereAnyValue:
+        - position: 2
+          name: 'timestamp'
   disallowedConstants:
     - constant: ['DATE_ISO8601', 'DATE_RFC3339', 'DATE_W3C']
       message: 'use DATE_ATOM instead'
@@ -129,7 +135,7 @@ rules:
   - Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
   - Ergebnis\PHPStan\Rules\Expressions\NoIssetRule
   - Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
-  - Jgut\PhpStanConfig\Rules\Statement\NoGotoRule
+  - Ergebnis\PHPStan\Rules\Classes\PHPUnit\Framework\TestCaseWithSuffixRule
 
 services:
   - class: Ergebnis\PHPStan\Rules\Methods\NoParameterWithContainerTypeDeclarationRule
@@ -137,13 +143,17 @@ services:
       interfacesImplementedByContainers: %ergebnis.interfacesImplementedByContainers%
       methodsAllowedToUseContainerTypeDeclarations: %ergebnis.methodsAllowedToUseContainerTypeDeclarations%
     tags: [phpstan.rules.rule]
-  - class: TheCodingMachine\PHPStan\Rules\Exceptions\ThrowMustBundlePreviousExceptionRule
+  - class: Jgut\PhpStanConfig\Rules\Classes\ConstructorIsFirstMethodInClassRule
     tags: [phpstan.rules.rule]
-  - class: TheCodingMachine\PHPStan\Rules\Exceptions\DoNotThrowExceptionBaseClassRule
+  - class: Jgut\PhpStanConfig\Rules\Statement\NoGotoRule
     tags: [phpstan.rules.rule]
-  - class: TheCodingMachine\PHPStan\Rules\Exceptions\EmptyExceptionRule
+  - class: Jgut\PhpStanConfig\Rules\Dates\NoRelativeDateTimeInterfaceRule
     tags: [phpstan.rules.rule]
-  - class: TheCodingMachine\PHPStan\Rules\Exceptions\MustRethrowRule
+  - class: Jgut\PhpStanConfig\Rules\Dates\NoRelativeStrtotimeRule
     tags: [phpstan.rules.rule]
-  - class: Mhujer\PHPStanRules\Rules\ConstructorIsFirstMethodInClassRule
+  - class: Jgut\PhpStanConfig\Rules\Exceptions\DoNotThrowExceptionBaseClassRule
+    tags: [phpstan.rules.rule]
+  - class: Jgut\PhpStanConfig\Rules\Exceptions\MustRethrowRule
+    tags: [phpstan.rules.rule]
+  - class: Jgut\PhpStanConfig\Rules\Exceptions\ThrowMustBundlePreviousExceptionRule
     tags: [phpstan.rules.rule]

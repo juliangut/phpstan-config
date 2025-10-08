@@ -28,7 +28,7 @@ final class NoGotoRule implements Rule
     }
 
     /**
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(UnusedFormalParameter)
      */
     public function processNode(Node $node, Scope $scope): array
     {
