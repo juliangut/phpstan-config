@@ -27,7 +27,7 @@
         "phpstan/phpstan-strict-rules": "^2.0",
         "shipmonk/phpstan-rules": "^4.2",
         "spaze/phpstan-disallowed-calls": "^4.6",
-        "symfony/polyfill-mbstring": "^1.30",
+        "symfony/polyfill-mbstring": "^1.31",
         "ticketswap/phpstan-error-formatter": "^1.2"
     },
     "require-dev": {
