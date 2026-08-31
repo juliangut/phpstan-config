@@ -24,11 +24,8 @@ class ContainerDynamicReturnTypeExtensionTest extends TypeInferenceTestCase
         yield from self::gatherAssertTypes(__DIR__ . '/Fixture/ContainerDynamicReturnTypeExtension/container.php');
     }
 
-    /**
-     * @param string|int ...$args
-     */
     #[DataProvider('dataFileAsserts')]
-    public function testFileAsserts(string $assertType, string $file, ...$args): void
+    public function testFileAsserts(string $assertType, string $file, mixed ...$args): void
     {
         $this->assertFileAsserts($assertType, $file, ...$args);
     }

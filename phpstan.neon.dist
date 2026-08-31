@@ -10,7 +10,7 @@ parameters:
     - tests
   excludePaths:
     - src/Stub
-    - tests/PhpStanConfig/Rules/*/Fixture/*/Failure/*
+    - tests/PhpStanConfig/Rules/*/Fixture/*
   ignoreErrors:
     - message: '/^Call to function method_exists\(\) with .Symplify\\\\EasyCodingStandard\\\\Config\\\\ECSConfig. and .configure. will always evaluate to (true|false)\.$/'
       path: ecs.php
