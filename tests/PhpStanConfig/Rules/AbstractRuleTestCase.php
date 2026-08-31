@@ -13,6 +13,7 @@ namespace Jgut\PhpStanConfig\Tests\Rules;
 
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @internal
@@ -28,9 +29,7 @@ abstract class AbstractRuleTestCase extends RuleTestCase
      */
     abstract public static function provideAnalysisSucceedsCases(): iterable;
 
-    /**
-     * @dataProvider provideAnalysisSucceedsCases
-     */
+    #[DataProvider('provideAnalysisSucceedsCases')]
     final public function testAnalysisSucceeds(string $path): void
     {
         static::assertFileExists($path);
@@ -44,10 +43,9 @@ abstract class AbstractRuleTestCase extends RuleTestCase
     abstract public static function provideAnalysisFailsCases(): iterable;
 
     /**
-     * @dataProvider provideAnalysisFailsCases
-     *
      * @param array{0: string, 1: int, 2?: string} $expectedError
      */
+    #[DataProvider('provideAnalysisFailsCases')]
     final public function testAnalysisFails(string $path, array $expectedError): void
     {
         static::assertFileExists($path);

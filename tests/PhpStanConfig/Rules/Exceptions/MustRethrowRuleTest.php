@@ -14,14 +14,14 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Exceptions;
 use Jgut\PhpStanConfig\Rules\Exceptions\MustRethrowRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<MustRethrowRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Exceptions\MustRethrowRule
  */
+#[CoversClass(MustRethrowRule::class)]
 final class MustRethrowRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable

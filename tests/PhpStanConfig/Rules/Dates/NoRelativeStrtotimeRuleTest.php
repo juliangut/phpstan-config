@@ -15,14 +15,14 @@ use Jgut\PhpStanConfig\Rules\Dates\NoRelativeStrtotimeRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<NoRelativeStrtotimeRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Dates\NoRelativeStrtotimeRule
  */
+#[CoversClass(NoRelativeStrtotimeRule::class)]
 final class NoRelativeStrtotimeRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable

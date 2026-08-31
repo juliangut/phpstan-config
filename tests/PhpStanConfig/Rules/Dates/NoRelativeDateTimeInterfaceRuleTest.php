@@ -14,14 +14,14 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Dates;
 use Jgut\PhpStanConfig\Rules\Dates\NoRelativeDateTimeInterfaceRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<NoRelativeDateTimeInterfaceRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Dates\NoRelativeDateTimeInterfaceRule
  */
+#[CoversClass(NoRelativeDateTimeInterfaceRule::class)]
 final class NoRelativeDateTimeInterfaceRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable

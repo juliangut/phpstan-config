@@ -14,14 +14,14 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Exceptions;
 use Jgut\PhpStanConfig\Rules\Exceptions\DoNotThrowExceptionBaseClassRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<DoNotThrowExceptionBaseClassRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Exceptions\DoNotThrowExceptionBaseClassRule
  */
+#[CoversClass(DoNotThrowExceptionBaseClassRule::class)]
 final class DoNotThrowExceptionBaseClassRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable

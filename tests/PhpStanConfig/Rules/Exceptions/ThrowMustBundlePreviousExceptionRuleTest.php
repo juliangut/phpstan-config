@@ -14,14 +14,14 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Exceptions;
 use Jgut\PhpStanConfig\Rules\Exceptions\ThrowMustBundlePreviousExceptionRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<ThrowMustBundlePreviousExceptionRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Exceptions\ThrowMustBundlePreviousExceptionRule
  */
+#[CoversClass(ThrowMustBundlePreviousExceptionRule::class)]
 final class ThrowMustBundlePreviousExceptionRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable

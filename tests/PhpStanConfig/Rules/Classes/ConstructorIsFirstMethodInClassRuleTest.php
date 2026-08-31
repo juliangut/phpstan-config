@@ -14,14 +14,14 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Classes;
 use Jgut\PhpStanConfig\Rules\Classes\ConstructorIsFirstMethodInClassRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<ConstructorIsFirstMethodInClassRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Classes\ConstructorIsFirstMethodInClassRule
  */
+#[CoversClass(ConstructorIsFirstMethodInClassRule::class)]
 final class ConstructorIsFirstMethodInClassRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable

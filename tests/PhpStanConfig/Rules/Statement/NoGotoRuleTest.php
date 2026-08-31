@@ -14,14 +14,14 @@ namespace Jgut\PhpStanConfig\Tests\Rules\Statement;
 use Jgut\PhpStanConfig\Rules\Statement\NoGotoRule;
 use Jgut\PhpStanConfig\Tests\Rules\AbstractRuleTestCase;
 use PHPStan\Rules\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  *
  * @extends AbstractRuleTestCase<NoGotoRule>
- *
- * @covers \Jgut\PhpStanConfig\Rules\Statement\NoGotoRule
  */
+#[CoversClass(NoGotoRule::class)]
 final class NoGotoRuleTest extends AbstractRuleTestCase
 {
     public static function provideAnalysisSucceedsCases(): iterable
