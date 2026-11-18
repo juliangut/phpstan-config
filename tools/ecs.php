@@ -15,7 +15,9 @@ use JgutCodingStandard\Sniffs\NamingConventions\CamelCapsFunctionNameSniff;
 use PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-$fixturesPath = __DIR__ . '/tests/PhpStanConfig/Rules';
+$root = __DIR__ . '/..';
+
+$fixturesPath = $root . '/tests/PhpStanConfig/Rules';
 $configSet = (new ConfigSet82())
     ->setHeader(<<<'HEADER'
     (c) 2023-{{year}} Julián Gutiérrez <juliangut@gmail.com>
@@ -37,13 +39,14 @@ $configSet = (new ConfigSet82())
     ]);
 $paths = [
     __FILE__,
-    __DIR__ . '/src',
-    __DIR__ . '/tests',
+    $root . '/src',
+    $root . '/tests',
 ];
 
 if (!method_exists(ECSConfig::class, 'configure')) {
-    return static function (ECSConfig $ecsConfig) use ($configSet, $paths): void {
+    return static function (ECSConfig $ecsConfig) use ($configSet, $paths, $root): void {
         $ecsConfig->paths($paths);
+        $ecsConfig->cacheDirectory($root . '/tools/.ecs.cache');
 
         $configSet->configure($ecsConfig);
     };
@@ -51,4 +54,5 @@ if (!method_exists(ECSConfig::class, 'configure')) {
 
 return $configSet
     ->configureBuilder()
+    ->withCache($root . '/tools/.ecs.cache')
     ->withPaths($paths);

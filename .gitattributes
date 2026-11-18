@@ -4,10 +4,7 @@
 .gitignore          export-ignore
 .github/            export-ignore
 .editorconfig       export-ignore
-.phplint.yml        export-ignore
-ecs.php             export-ignore
-infection.json.dist export-ignore
-phpstan.neon.dist   export-ignore
-phpunit.xml.dist    export-ignore
+tests/              export-ignore
+tools/              export-ignore
 Makefile            export-ignore
 CONTRIBUTING.md     export-ignore

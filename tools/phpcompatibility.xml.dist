@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="PHPStan Config PHPCompatibility Rule Set"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+>
+    <description>PHP cross-version compatibility checks.</description>
+
+    <!-- Lowest PHP version we support; PHPCompatibility reports anything that breaks on it or newer. -->
+    <config name="testVersion" value="8.2-" />
+
+    <rule ref="PHPCompatibility" />
+</ruleset>

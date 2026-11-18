@@ -1,0 +1,6 @@
+path:
+  - tools
+  - src
+  - tests
+jobs: 10
+cache-dir: tools/.phplint.cache

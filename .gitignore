@@ -1,6 +1,6 @@
 !.gitignore
 composer.lock
 vendor/
-*.cache
+/tools/.*.cache
 infection-log.*
 build/
