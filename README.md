@@ -1,4 +1,4 @@
-[![PHP version](https://img.shields.io/badge/PHP-%3E%3D8.1-8892BF.svg?style=flat-square)](http://php.net)
+[![PHP version](https://img.shields.io/badge/PHP-%3E%3D8.2-8892BF.svg?style=flat-square)](http://php.net)
 [![Latest Version](https://img.shields.io/packagist/v/juliangut/phpstan-config.svg?style=flat-square)](https://packagist.org/packages/juliangut/phpstan-config)
 [![License](https://img.shields.io/github/license/juliangut/phpstan-config.svg?style=flat-square)](https://github.com/juliangut/phpstan-config/blob/master/LICENSE)
 
@@ -20,7 +20,7 @@ composer require --dev juliangut/phpstan-config
 If You need a specific PHPStan constraint
 
 ```
-composer require --dev phpstan/phpstan:^1.11
+composer require --dev phpstan/phpstan:^2.1
 ```
 
 ## Usage
