@@ -31,9 +31,9 @@
     },
     "require-dev": {
         "infection/infection": "~0.25|~0.27",
-        "juliangut/easy-coding-standard-config": "^2.0",
+        "juliangut/easy-coding-standard-config": "^2.2",
         "overtrue/phplint": "^9.8",
-        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcompatibility/php-compatibility": "^10.0@alpha",
         "phpmd/phpmd": "^3.0",
         "phpunit/phpunit": "^11.5 || ^12.5 || ^13.4",
         "povils/phpmnd": "^3.5",

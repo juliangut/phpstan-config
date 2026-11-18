@@ -8,5 +8,8 @@
     <!-- Lowest PHP version we support; PHPCompatibility reports anything that breaks on it or newer. -->
     <config name="testVersion" value="8.2-" />
 
-    <rule ref="PHPCompatibility" />
+    <rule ref="PHPCompatibility">
+        <!-- Provided by symfony/polyfill-mbstring on PHP < 8.4 -->
+        <exclude name="PHPCompatibility.FunctionUse.NewFunctions.mb_ltrimFound" />
+    </rule>
 </ruleset>
